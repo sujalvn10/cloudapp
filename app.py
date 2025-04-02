@@ -9,7 +9,7 @@ BASE_URL = "https://api.openweathermap.org/data/2.5/weather"
 @app.route("/weather", methods=["GET"])
 def get_weather():
     city = request.args.get("city", "Delhi")  # Default city
-    url = f"{https://openweathermap.org/api/one-call-3}?q={city}&appid={https://api.openweathermap.org/data/3.0/onecall?lat={lat}&lon={lon}&exclude={part}&appid={API key}}&units=metric"
+    url = f"{BASE_URL}?q={city}&appid={API_KEY}&units=metric"
     response = requests.get(url)
     return jsonify(response.json())
 
